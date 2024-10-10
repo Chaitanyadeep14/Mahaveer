@@ -1,25 +1,22 @@
 let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-const intervalTime = 5000; // 5 seconds
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
 
-function showNextSlide() {
-    // Reset all slides
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${slideIndex * 100}%)`;
-    });
+        function showSlide(index) {
+            if (index >= slides.length) slideIndex = 0;
+            if (index < 0) slideIndex = slides.length - 1;
 
-    // Increment slideIndex
-    slideIndex++;
+            slides.forEach(slide => slide.style.display = 'none');
+            dots.forEach(dot => dot.classList.remove('active'));
 
-    // Reset slideIndex when reaching the end
-    if (slideIndex >= totalSlides) {
-        slideIndex = 0;
-    }
-}
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
 
-// Set interval for automatic slide change
-setInterval(showNextSlide, intervalTime);
+        function nextSlide() {
+            slideIndex++;
+            showSlide(slideIndex);
+        }
 
-// Initialize the first slide as active when the page loads
-showNextSlide();
+        showSlide(slideIndex);
+        setInterval(nextSlide, 5000);

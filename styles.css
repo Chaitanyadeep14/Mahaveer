@@ -194,54 +194,112 @@ nav ul li a:hover {
     color: #666;
 }
 
-/* Team Section */
-.team {
-    margin-bottom: 70px;
-}
-
-.team h2 {
-    font-size: 40px;
-    color: #333;
-    margin-bottom: 40px;
-    font-family: 'Georgia', serif;
-}
-
-.team-members {
+.founder-section {
     display: flex;
-    justify-content: space-around;
-    transform: translateY(30px);
-    opacity: 0;
-    animation: fadeInUp 2s ease-in forwards;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center; /* Ensure all text is centered */
 }
 
-.team-member {
-    text-align: center;
-    max-width: 230px;
+.founder-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 30px; /* A small gap between the image and the text */
 }
 
-.team-member img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.founder-info {
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.8;
 }
 
-.team-member:hover img {
-    transform: scale(1.1);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.founder-info h2.company-name {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.team-member h3 {
-    font-size: 24px;
-    color: #444;
-    margin-bottom: 5px;
+.founder-info p.owner-name,
+.founder-info p.owner-role {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
 }
 
-.team-member p {
+.founder-info p.owner-role {
+    margin-top: 5px;
+    color: #F59F0E; /* Highlighted color for role */
+}
+
+.founder-info p.owner-message {
+    font-size: 16px;
+    font-style: italic;
+    color: #F59F0E;
+    margin-top: 10px;
+}
+
+.founder-info p.company-vision {
+    margin-top: 20px;
     font-size: 18px;
-    color: #777;
+    color: #444;
 }
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .founder-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-image img {
+        width: 200px;
+        margin-bottom: 20px; /* Adds gap between the image and text on smaller screens */
+        margin-right: 0; /* Remove margin on mobile */
+    }
+
+    .founder-info {
+        text-align: center; /* Center the text for mobile view */
+    }
+}
+
+
+
+
+.happy-customers {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.happy-customers h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.customer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.customer-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain; /* Ensures the image fits within the area without being cropped */
+    border-radius: 10px;
+    transition: transform 0.3s;
+    background-color: #fff; /* Adds a background color to fill empty space if the image doesn't cover the full area */
+}
+
+.customer-item img:hover {
+    transform: scale(1.05);
+}
+
 
 /* Testimonials Section */
 .testimonials {
@@ -680,27 +738,27 @@ nav ul li a:hover {
     background-color: #1ebd59;
 }
 
-/* Footer */
 .footer {
-    background-color: #333;
+    background-color: #1a1a1a;
     color: white;
-    padding: 30px 0;
-    margin-top: 50px;
+    padding: 40px 20px;
 }
 
-.footer .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
 }
 
 .footer-section {
-    width: 25%;
+    padding: 20px;
 }
 
 .footer-section h4 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 20px; /* Increased heading size */
+    margin-bottom: 20px;
+    color: #F59F0E;
+    font-weight: 600;
 }
 
 .footer-section ul {
@@ -709,13 +767,14 @@ nav ul li a:hover {
 }
 
 .footer-section ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* Slightly increased space between list items */
 }
 
 .footer-section ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 16px; /* Increased link text size */
+    transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
@@ -724,29 +783,57 @@ nav ul li a:hover {
 
 .social-icons {
     display: flex;
-    list-style: none;
+    justify-content: start;
+    padding: 0;
 }
 
 .social-icons li {
-    margin-right: 15px;
+    margin-right: 20px; /* Increased spacing between icons */
 }
 
-.social-icons li a img {
-    width: 24px;
-    height: 24px;
+.social-icons li a {
+    font-size: 28px; /* Increased social icon size */
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.social-icons li a:hover {
+    color: #F59F0E;
+    transform: scale(1.2);
+}
+
+/* Enhanced Contact Info Styling */
+.contact-section p {
+    font-size: 18px; /* Increased text size for contact info */
+    margin: 10px 0;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.contact-section p i {
+    font-size: 22px; /* Increased icon size in contact info */
+    color: #F59F0E;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-section p:hover i {
+    color: #ffdb4d;
+}
+
+/* Footer Bottom Styling */
 .footer-bottom {
+    background-color: #111;
+    padding: 15px 0;
     text-align: center;
-    padding: 20px 0;
-    background-color: #555;
+    color: #bbb;
+    font-size: 15px; /* Slightly increased font size */
 }
 
 .footer-bottom p {
     margin: 0;
-    font-size: 0.9rem;
 }
-
 
 /* Keyframes for Animations */
 @keyframes fadeInUp {
