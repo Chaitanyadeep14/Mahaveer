@@ -163,42 +163,85 @@
         }
 
         /* Slider Styles */
-        .slider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+       /* Slider Styles */
+.slider {
+    position: relative;
+    width: 100%; /* Full width */
+    height: 300px; /* Default height for mobile and smaller devices */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
-        .slides {
-            display: flex;
-            transition: 0.5s ease-in-out;
-        }
+.slides {
+    display: flex;
+    transition: 0.5s ease-in-out;
+}
 
-        .slide {
-            min-width: 100%;
-            transition: opacity 0.5s ease-in-out;
-        }
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
 
-        .dots {
-            text-align: center;
-            padding: 10px;
-        }
+.slide img {
+    width: 100%; /* Full width */
+    height: 100%; /* Match image height to slider */
+    object-fit: cover; /* Ensure image covers the slider area */
+}
 
-        .dot {
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-        }
+/* Dots for navigation */
+.dots {
+    text-align: center;
+    padding: 10px;
+    position: absolute; /* Positioning the dots inside the slider */
+    bottom: 20px; /* Move them upwards */
+    left: 50%;
+    transform: translateX(-50%); /* Center the dots */
+    z-index: 10; /* Ensure they are above the slider images */
+}
 
-        .active-dot {
-            background-color: #f59f0e; /* Active slide color */
-        }
+/* Each individual dot */
+.dot {
+    height: 15px; /* Increase height */
+    width: 15px; /* Increase width */
+    margin: 0 8px; /* Increase space between dots */
+    background-color: rgba(255, 255, 255, 0.8); /* Light white color with transparency */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid #f59f0e; /* Add a border to make them more prominent */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover and active states */
+}
 
+.dot:hover {
+    background-color: #f59f0e; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Active dot styling */
+.active-dot {
+    background-color: #f59f0e; /* Active slide color */
+    transform: scale(1.3); /* Slightly larger active dot */
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+    .dot {
+        height: 20px; /* Increase dot size on desktop */
+        width: 20px;
+    }
+}
+/* Media query for desktops */
+@media (min-width: 1024px) {
+    .slider {
+        height: 600px; /* Increase the slider height for larger screens */
+    }
+
+    .slide img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
         /* Read More/Read Less Functionality */
         .more-text {
             display: none;
@@ -354,7 +397,6 @@
         </section>
     </div>
 
-
     <div class="about-us-piyush">
         <section class="about" id="about">
             <h3 class="sub-heading">Why Us</h3>
@@ -385,13 +427,15 @@
                     </ol>
                     
                    
-                    <!-- <a href="#" class="btn">Learn More</a> -->
+                    
                 </div>
             </div>
         </section>
     </div>
     </div>
     </div>
+    
+
     <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-container">
