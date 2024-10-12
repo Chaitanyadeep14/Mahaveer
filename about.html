@@ -5,16 +5,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Mahaveer Interior & Decorators</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Updated Font Awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Latest version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <style>
+        /* Header Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px; /* Increased padding for top and bottom */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            flex: 1;
+        }
+
+        .logo img {
+            height: 80px; /* Increased logo size */
+            cursor: pointer;
+        }
+
+        .hamburger {
+            font-size: 40px; /* Increased hamburger icon size */
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1100;
+        }
+
+        /* Overlay Menu Styles */
+        nav #overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+            z-index: 1000;
+        }
+
+        nav#overlay-menu.active {
+            transform: translateX(0);
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 20px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #F59F0E;
+        }
+
+        /* Responsive Hamburger Menu */
+        @media (min-width: 769px) {
+            nav#overlay-menu {
+                position: relative;
+                height: auto;
+                background: none;
+                transform: translateX(0);
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            nav ul li {
+                margin-right: 20px;
+            }
+
+            nav ul li:last-child {
+                margin-right: 0;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+                color: #333;
+            }
+
+            .hamburger {
+                display: none;
+            }
+        }
+
+        /* Responsive Adjustments for Tablets and Phones */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+
+            .logo img {
+                height: 70px;
+            }
+
+            .hamburger {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 10px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+
+            .hamburger {
+                font-size: 30px;
+            }
+        }
+
+        /* Responsive Design for tablets and mobile devices */
+        @media (max-width: 768px) {
+            .mission-vision {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .founder-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .founder-image img {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 20px;
+            }
+
+            .founder-info {
+                text-align: center;
+                padding: 0;
+            }
+
+            .happy-customers h2 {
+                font-size: 28px;
+            }
+
+            .testimonials h2 {
+                font-size: 32px;
+            }
+
+            .testimonial-item {
+                font-size: 18px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Responsive for mobile devices */
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hamburger {
+                margin-top: 10px;
+            }
+
+            .about {
+                padding: 20px;
+            }
+
+            .hero-banner {
+                height: 250px;
+            }
+
+            .hero-banner h1 {
+                font-size: 24px;
+            }
+
+            .about h1 {
+                font-size: 28px;
+            }
+
+            .happy-customers h2 {
+                font-size: 24px;
+            }
+
+            .testimonials h2 {
+                font-size: 28px;
+            }
+
+            .testimonial-item {
+                font-size: 16px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-section {
+                min-width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
+        <div class="header-container">
+            <div class="logo">
+                <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <nav>
+        <!-- The overlay navigation menu -->
+        <nav id="overlay-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -49,18 +298,6 @@
             </div>
         </div>
 
-        <!-- <section class="founder-section">
-            <div class="founder-image">
-                <img src="owner.png" alt="Kuna Ram">
-            </div>
-            <div class="founder-info">
-                <h2 class="company-name">Mahaveer Interior & Decorators</h2>
-                <p class="owner-name"> Mr. Kuna Ram</p>
-                <p class="owner-role">Founder & CEO </p>
-                <p class="owner-message">"Creating timeless, elegant, and comfortable spaces that reflect the essence of our clients."</p>
-                <p class="company-vision">At Mahaveer Interior & Decorators, we blend creativity with technical expertise to craft stunning interiors that are both functional and visually appealing.</p>
-            </div>
-        </section> -->
         <section class="founder-section" style="display: flex; align-items: center; justify-content: space-around; padding: 20px; background-color: #f5f5f5;">
             <div class="founder-image">
                 <img src="owner.png" alt="Kuna Ram" style="width: 350px; height: 350px; border-radius: 5px; border: 5px solid #F59F0E; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
@@ -74,11 +311,9 @@
             </div>
         </section>
         
-        
-        
         <!-- Happy Customers Section -->
         <div class="happy-customers fade-in-up">
-            <h2>Our Happy Customers</h2>
+            <h2>Our Teams</h2>
             <div class="customer-grid">
                 <div class="customer-item">
                     <img src="12.svg" alt="Customer 1">
@@ -155,6 +390,38 @@
         <p>&copy; 2024 Dev Creations & Solutions. All rights reserved.</p>
     </div>
 </footer>
+
+<script>
+
+    const hamburger = document.getElementById('hamburger');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    hamburger.addEventListener('click', function() {
+        overlayMenu.classList.toggle('active');
+    });
+
+    function toggleReadMore() {
+        const moreText = document.querySelector(".more-text");
+        const readMoreBtn = document.querySelector(".read-more-btn");
+        const lessText = document.querySelector(".less-text");
+
+        if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline";
+            readMoreBtn.style.display = "none";
+            lessText.style.display = "inline";
+        } else {
+            moreText.style.display = "none";
+            readMoreBtn.style.display = "inline";
+            lessText.style.display = "none";
+        }
+    }
+    
+    // Function to toggle the overlay menu
+    function toggleMenu() {
+        var overlayMenu = document.getElementById('overlay-menu');
+        overlayMenu.classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>

@@ -7,15 +7,280 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Updated Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Latest version -->
-
+    <style>
+        /* Header Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px; /* Increased padding for top and bottom */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+    
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        .logo {
+            flex: 1;
+        }
+    
+        .logo img {
+            height: 80px; /* Increased logo size */
+            cursor: pointer;
+        }
+    
+        .hamburger {
+            font-size: 40px; /* Increased hamburger icon size */
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1100;
+        }
+    
+        /* Overlay Menu Styles */
+        nav #overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+            z-index: 1000;
+        }
+    
+        nav#overlay-menu.active {
+            transform: translateX(0);
+        }
+    
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+    
+        nav ul li {
+            margin: 20px 0;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+    
+        nav ul li a:hover {
+            color: #F59F0E;
+        }
+    
+        /* Responsive Hamburger Menu */
+        @media (min-width: 769px) {
+            nav#overlay-menu {
+                position: relative;
+                height: auto;
+                background: none;
+                transform: translateX(0);
+                display: flex;
+                justify-content: flex-end;
+            }
+    
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+    
+            nav ul li {
+                margin-right: 20px;
+            }
+    
+            nav ul li:last-child {
+                margin-right: 0;
+            }
+    
+            nav ul li a {
+                font-size: 16px;
+                color: #333;
+            }
+    
+            .hamburger {
+                display: none;
+            }
+        }
+    
+        /* Responsive Adjustments for Tablets and Phones */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+    
+            .logo img {
+                height: 70px;
+            }
+    
+            .hamburger {
+                font-size: 34px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 10px;
+            }
+    
+            .logo img {
+                height: 60px;
+            }
+    
+            .hamburger {
+                font-size: 30px;
+            }
+        }
+    
+        /* General Mobile and Tablet (max-width: 768px) */
+        @media (max-width: 768px) {
+            /* Reverse order of map and contact form for smaller screens */
+            .form-map {
+                display: flex;
+                flex-direction: column-reverse; /* Reverse the order */
+                align-items: center;
+                padding: 20px 10px;
+            }
+    
+            .contact-form {
+                width: 100%;
+                padding: 20px;
+            }
+    
+            .map {
+                width: 100%;
+                padding: 20px 0;
+            }
+    
+            .map iframe {
+                width: 100%;
+                height: 350px; /* Reduce height for smaller screens */
+            }
+    
+            /* Adjust input fields */
+            .contact-form input, .contact-form textarea {
+                width: 100%;
+                margin-bottom: 10px;
+                font-size: 16px; /* Adjust font-size */
+                padding: 10px;
+            }
+    
+            .btn {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+            }
+    
+            /* Hero banner section adjustment */
+            .hero-banner h1 {
+                font-size: 28px; /* Adjust banner heading size */
+            }
+    
+            .hero-banner p {
+                font-size: 14px; /* Adjust banner paragraph size */
+            }
+    
+            /* General spacing adjustments for mobile */
+            .info-item {
+                margin: 10px 0;
+            }
+    
+            .footer-container {
+                flex-direction: column; /* Stack footer sections vertically */
+                align-items: flex-start;
+                padding: 20px;
+            }
+    
+            .footer-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    
+        /* Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            /* Further adjustments for small screens */
+            .contact-form input, .contact-form textarea {
+                font-size: 14px;
+                padding: 10px;
+                margin-bottom: 8px; /* Smaller margin for tight space */
+            }
+    
+            .btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+    
+            .map iframe {
+                height: 300px; /* Further reduce height */
+            }
+    
+            /* Hero banner adjustments */
+            .hero-banner h1 {
+                font-size: 24px;
+            }
+    
+            .hero-banner p {
+                font-size: 12px;
+            }
+    
+            /* Footer adjustment */
+            .footer-container {
+                padding: 10px;
+            }
+    
+            .footer-section h4 {
+                font-size: 16px;
+            }
+    
+            .footer-section p, .footer-section ul li a {
+                font-size: 14px;
+            }
+    
+            /* Adjustments to footer links */
+            .footer-section ul {
+                padding-left: 20px;
+            }
+    
+            .footer-section ul li {
+                margin-bottom: 8px;
+            }
+        }
+    
+    </style>
+    
 </head>
 <body>
     <header>
         <div class="logo">
             <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
         </div>
-        <nav>
-            <ul>
+        <nav id="overlay-menu">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -23,7 +288,13 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
+
 
     <!-- Hero Banner Container -->
     <section class="hero-banner">
@@ -120,5 +391,13 @@
 </footer>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script>
+        // Function to toggle the overlay menu
+function toggleMenu() {
+    var overlayMenu = document.getElementById('overlay-menu');
+    overlayMenu.classList.toggle('active');
+}
+    </script>
 </body>
 </html>

@@ -7,6 +7,242 @@
     <link rel="stylesheet" href="styles.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <style>
+        /* Header Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px; /* Increased padding for top and bottom */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+    
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        .logo {
+            flex: 1;
+        }
+    
+        .logo img {
+            height: 80px; /* Increased logo size */
+            cursor: pointer;
+        }
+    
+        .hamburger {
+            font-size: 40px; /* Increased hamburger icon size */
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1100;
+        }
+    
+        /* Overlay Menu Styles */
+        nav #overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+            z-index: 1000;
+        }
+    
+        nav#overlay-menu.active {
+            transform: translateX(0);
+        }
+    
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+    
+        nav ul li {
+            margin: 20px 0;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+    
+        nav ul li a:hover {
+            color: #F59F0E;
+        }
+    
+        /* Responsive Hamburger Menu */
+        @media (min-width: 769px) {
+            nav#overlay-menu {
+                position: relative;
+                height: auto;
+                background: none;
+                transform: translateX(0);
+                display: flex;
+                justify-content: flex-end;
+            }
+    
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+    
+            nav ul li {
+                margin-right: 20px;
+            }
+    
+            nav ul li:last-child {
+                margin-right: 0;
+            }
+    
+            nav ul li a {
+                font-size: 16px;
+                color: #333;
+            }
+    
+            .hamburger {
+                display: none;
+            }
+        }
+    
+        /* Responsive Adjustments for Tablets and Phones */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+    
+            .logo img {
+                height: 70px;
+            }
+    
+            .hamburger {
+                font-size: 34px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 10px;
+            }
+    
+            .logo img {
+                height: 60px;
+            }
+    
+            .hamburger {
+                font-size: 30px;
+            }
+        }
+    
+        /* Project Hero Banner */
+        .project-hero-banner h1 {
+            font-size: 22px;
+        }
+    
+        .project-hero-banner p {
+            font-size: 14px;
+        }
+    
+        /* Project Section */
+        .project-heading {
+            font-size: 20px;
+        }
+    
+        .project-description {
+            font-size: 14px;
+        }
+    
+        .project-card-grid {
+            grid-template-columns: 1fr;
+        }
+    
+        .project-card-info h3 {
+            font-size: 18px;
+        }
+    
+        .project-card-info p {
+            font-size: 12px;
+        }
+    
+        /* Project Filters */
+        .project-filters {
+            flex-direction: column;
+        }
+    
+        .project-btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    
+        /* Modal Adjustments */
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+    
+      /* Footer adjustment */
+    .footer-container {
+        padding: 10px;
+    }
+
+    .footer-section h4 {
+        font-size: 16px;
+    }
+
+    .footer-section p, .footer-section ul li a {
+        font-size: 14px;
+    }
+
+    /* Adjustments to footer links */
+    .footer-section ul {
+        padding-left: 20px;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+
+        .project-btn {
+            color: #333; /* Default text color */
+            border: 1px solid #ccc; /* Default border */
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .project-btn:hover {
+            background-color: #e0e0e0;
+        }
+    
+        .project-btn.active {
+            background-color: #f59f0e; /* Active background color */
+            color: white; /* Active text color */
+            border: 1px solid #f59f0e; /* Active border */
+        }
+    </style>
+    
     
 </head>
 <body>
@@ -14,8 +250,8 @@
         <div class="logo">
             <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
         </div>
-        <nav>
-            <ul>
+        <nav id="overlay-menu">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -23,6 +259,11 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
 
@@ -144,10 +385,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-   <!-- Footer Section -->
-<footer class="footer">
+  <!-- Footer Section -->
+  <footer class="footer">
     <div class="footer-container">
-        <!-- About Section -->
         <div class="footer-section about-section">
             <h4>About</h4>
             <p>
@@ -155,7 +395,6 @@
             </p>
         </div>
 
-        <!-- Contact Section -->
         <div class="footer-section contact-section">
             <h4>Contact</h4>
             <p><i class="fas fa-phone"></i> +91 9916335613 / +91 6378585249</p>
@@ -163,7 +402,6 @@
             <p><i class="fas fa-map-marker-alt"></i> No: 10/11, K.R. Defence Colony, 1st Phase, Chemasandra, Virgo Nagar (P) Bangalore: 49</p>
         </div>
 
-        <!-- Useful Links Section -->
         <div class="footer-section links-section">
             <h4>Useful Links</h4>
             <ul>
@@ -172,7 +410,6 @@
             </ul>
         </div>
 
-        <!-- Map Section -->
         <div class="footer-section map-section">
             <h4>Find Us</h4>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7948625702265!2d77.7410656246665!3d13.048725687273821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11005b6ecad1%3A0x850094a13c1d0a41!2sMahaveer%20Interior%20%26%20Decorators!5e0!3m2!1sen!2sin!4v1728021326822!5m2!1sen!2sin" 
@@ -184,5 +421,13 @@
         <p>&copy; 2024 Dev Creations & Solutions. All rights reserved.</p>
     </div>
 </footer>
+<script>
+    // Function to toggle the overlay menu
+function toggleMenu() {
+    var overlayMenu = document.getElementById('overlay-menu');
+    overlayMenu.classList.toggle('active');
+}
+</script>
+
 </body>
 </html>
