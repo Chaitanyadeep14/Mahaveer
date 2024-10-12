@@ -18,9 +18,11 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', serif;
             color: #333;
             background-color: #f9f9f9;
+            font-size: 18px; /* Consistent font size */
+            line-height: 1.6;
         }
 
         header {
@@ -36,7 +38,7 @@
             height: 50px;
         }
 
-        .nav-wrapper {
+        /* .nav-wrapper {
             margin-left: auto;
         }
 
@@ -52,9 +54,10 @@
         nav ul li a {
             text-decoration: none;
             color: #333;
-            font-size: 16px;
+            font-size: 18px; 
+            font-family: 'Times New Roman', serif;
             font-weight: bold;
-        }
+        } */
 
         /* Slider Section */
         .slider {
@@ -113,6 +116,7 @@
         .about h1 {
             font-size: 36px;
             color: #333;
+            font-family: 'Times New Roman', serif; /* Consistent font */
         }
 
         .about p {
@@ -121,7 +125,9 @@
             margin-top: 20px;
             font-size: 18px;
             line-height: 1.6;
-            color: #666;
+            color: #333;
+            text-align: justify;
+            font-family: 'Times New Roman', serif; /* Consistent font */
         }
 
         .row {
@@ -147,30 +153,17 @@
         .content h3 {
             font-size: 28px;
             margin-bottom: 20px;
+            font-family: 'Times New Roman', serif; /* Consistent font */
+            color: #333;
         }
 
-        .icons-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .icons {
-            flex: 1;
-            text-align: center;
-        }
-
-        .icons i {
-            font-size: 24px;
-            color: #F59F0E;
+        .content p {
+            font-size: 18px;
+            color: #333;
             margin-bottom: 10px;
+            text-align: justify;
+            font-family: 'Times New Roman', serif; /* Consistent font */
         }
-
-        .icons span {
-            display: block;
-            font-size: 16px;
-        }
-
         /* Projects Section */
         .projects-container {
             padding: 60px 0;
@@ -230,8 +223,9 @@
         }
 
         .project-item p {
-            color: #666;
-            margin-bottom: 10px;
+            color: #444;
+            font-size: 18px;
+            margin-bottom: 5px;
         }
 
         .btn {
@@ -246,7 +240,403 @@
         .btn:hover {
             background-color: #333;
         }
+        /* Read More Functionality */
+        .more-text {
+            display: none;
+        }
+
+        .read-more-btn {
+            background-color: #F59F0E;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #333;
+        }
+
+        /* Expand Content */
+        .expanded .more-text {
+            display: inline;
+        }
+
+        .expanded .read-more-btn {
+            display: none;
+        }
+
+        .less-text {
+            display: none;
+            cursor: pointer;
+            color: #F59F0E;
+            text-decoration: underline;
+        }
+
+        .expanded .less-text {
+            display: block;
+        }
+
+        .footer {
+            background-color: #000; /* Black background for footer */
+            color: #fff; /* White text color */
+            padding: 50px 20px;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items at the top */
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            background-color: transparent; /* Remove white background */
+            border-radius: 10px;
+        }
+        
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #F59F0E;
+        }
+        
+        .footer-section p,
+        .footer-section ul li a {
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.8;
+        }
+        
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #F59F0E;
+        }
+        
+        .contact-section p {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .contact-section i {
+            margin-right: 10px;
+            color: #F59F0E;
+        }
+        
+        .map-section iframe {
+            border: 2px solid #F59F0E;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            font-size: 16px;
+        }
+        
+        
+        
     </style>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Times New Roman', serif;
+            color: #333;
+            background-color: #f9f9f9;
+            font-size: 18px; 
+            line-height: 1.6;
+        }
+    
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .logo img {
+            height: 50px;
+        }
+    
+        /* .nav-wrapper {
+            margin-left: auto;
+        }
+    
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+    
+        nav ul li {
+            margin-right: 20px;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px; 
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+        }
+     */
+        /* Slider Section */
+        .slider {
+            width: 100%;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            height: 650px;
+        }
+    
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+    
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+        }
+    
+        .slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    
+        /* About Us Section */
+        .about-us-piyush {
+            padding: 60px 0;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    
+        .about h1 {
+            font-size: 36px;
+            color: #333;
+            font-family: 'Times New Roman', serif;
+        }
+    
+        .about p {
+            max-width: 850px;
+            margin: 0 auto;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+    
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+    
+        .image {
+            flex: 1;
+            max-width: 50%;
+        }
+    
+        .content {
+            flex: 1;
+            max-width: 50%;
+            text-align: left;
+        }
+    
+        .content h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    
+        .content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+    
+        /* Responsive for Mobile */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            /* nav ul {
+                flex-direction: column;
+            }
+    
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            } */
+    
+            .slider {
+                height: 400px;
+            }
+    
+            .about h1 {
+                font-size: 28px;
+            }
+    
+            .about p {
+                font-size: 16px;
+            }
+    
+            .row {
+                flex-direction: column;
+            }
+    
+            .image, .content {
+                max-width: 100%;
+            }
+    
+            .content h3 {
+                font-size: 22px;
+            }
+    
+            .content p {
+                font-size: 16px;
+            }
+    
+            .project-item {
+                max-width: 100%;
+            }
+    
+            .project-image img {
+                height: auto;
+            }
+        }
+    
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+    
+            /* nav ul li a {
+                font-size: 16px;
+            } */
+    
+            .about h1 {
+                font-size: 24px;
+            }
+    
+            .content h3 {
+                font-size: 20px;
+            }
+    
+            .content p {
+                font-size: 14px;
+            }
+    
+            .project-image img {
+                height: 250px;
+            }
+        }
+            /* General Navbar Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none; /* Hide by default */
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Responsive Navbar for Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide nav items initially */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #fff;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+}
+
+/* When the navigation is visible */
+.nav-active {
+    display: flex; /* Show nav items when active */
+}
+
+
+
+
+    </style>
+    
 </head>
 <body>
     <header>
@@ -254,7 +644,7 @@
             <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
         </div>
         <div class="nav-wrapper">
-            <nav>
+            <!-- <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -262,7 +652,20 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
+            </nav> -->
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    &#9776; <!-- Hamburger Icon -->
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
+            
         </div>
     </header>
 
@@ -304,8 +707,17 @@
             </div>
             <div class="content">
                 <h3>The Story of Mahaveer Interior & Decorators</h3>
-                <p style="text-align: justify;">At Mahaveer Interior & Decorators, we believe that every space has a story to tell. With over 15 years of experience, we have transformed homes and offices into beautiful, functional environments that reflect the unique personalities of our clients. Our commitment to quality, attention to detail, and passion for design make us the trusted choice for those seeking a perfect blend of creativity and functionality. We create spaces that feel like home, focusing on your style and needs, and bringing your vision to life with expert design and craftsmanship. Every project is a perfect blend of beauty and comfort, just for you.</p>
-             <a href="about.html" class="btn">See More</a>
+                <p id="about-text">
+                    At Mahaveer Interior & Decorators, we believe that every space has a story to tell. With over 15 years of experience, we have transformed homes and offices into beautiful, functional environments that reflect the unique personalities of our clients. 
+                    Our commitment to quality, attention to detail, and passion for design make us the trusted choice for those seeking a perfect blend of creativity and functionality.
+                    <span class="more-text">
+                        We pride ourselves on listening to our clients, understanding their needs, and delivering results that not only meet but exceed expectations. Whether it’s a cozy home renovation or a large-scale commercial project, our goal is to create spaces that inspire, uplift, and stand the test of time.
+                        We also prioritize sustainability in all our designs, ensuring that we not only beautify spaces but also contribute to a healthier, greener environment. By using eco-friendly materials and energy-efficient solutions, we create interiors that are as sustainable as they are stylish.
+                        We work closely with our clients from concept to completion, ensuring that every detail aligns with their vision. Our team is dedicated to bringing creativity and innovation to each project while maintaining a strong focus on functionality and comfort.
+                    </span>
+                </p>
+                <a class="read-more-btn" onclick="toggleReadMore()">Read More</a>
+                <a class="less-text" onclick="toggleReadMore()">Read Less</a>
             </div>
         </div>
     </section>
@@ -385,9 +797,6 @@
                         <span style="font-weight: bold;">• Project Management:</span> Seamlessly executing your project from concept to completion.
                     </li>
                 </ol>
-                
-               
-                <a href="#" class="btn">Learn More</a>
             </div>
         </div>
     </section>
@@ -400,53 +809,69 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section company-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-section support-section">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-section follow-section">
-                <h4>Follow Us</h4>
-                <ul class="social-icons">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-section contact-section">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-phone"></i> +91 9916335613</p>
-                <p><i class="fas fa-phone"></i> +91 6378585249</p>
-                <p><i class="fas fa-phone"></i> +91 8890576350</p>
-                <p><i class="fas fa-envelope"></i> Email: kunaram1998@gmail.com</p>
-            </div>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section about-section">
+            <h4>About</h4>
+            <p>
+                Since 2008, Mahaveer Interior & Decorators has been transforming homes and offices with its unique human-centric approach. For the past 16 years, it has ensured that its designs are not just about aesthetics but genuinely resonate with its clients' needs and lifestyles.
+            </p>
         </div>
-    
-        <div class="footer-bottom">
-            <p>&copy; 2024 Dev Creations & Solutions. All rights reserved.</p>
-        </div>
-    </footer>
-    
-    
-    
 
-    <script src="slider.js"></script>
+        <!-- Contact Section -->
+        <div class="footer-section contact-section">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> +91 9916335613 / +91 6378585249</p>
+            <p><i class="fas fa-phone"></i> +91 8890576350</p>
+            <p><i class="fas fa-map-marker-alt"></i> No: 10/11, K.R. Defence Colony, 1st Phase, Chemasandra, Virgo Nagar (P) Bangalore: 49</p>
+        </div>
+
+        <!-- Useful Links Section -->
+        <div class="footer-section links-section">
+            <h4>Useful Links</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Map Section -->
+        <div class="footer-section map-section">
+            <h4>Find Us</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7948625702265!2d77.7410656246665!3d13.048725687273821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11005b6ecad1%3A0x850094a13c1d0a41!2sMahaveer%20Interior%20%26%20Decorators!5e0!3m2!1sen!2sin!4v1728021326822!5m2!1sen!2sin" 
+            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Dev Creations & Solutions. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+    <script>
+        function toggleReadMore() {
+            const content = document.querySelector('.content');
+            content.classList.toggle('expanded');
+        }
+    </script>
+
+<script>
+    // Get the elements
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    // Add event listener to the hamburger icon
+    hamburger.addEventListener('click', () => {
+        // Toggle the visibility of the navbar
+        navLinks.classList.toggle('nav-active');
+    });
+</script>
+
     
 </body>
 </html>
