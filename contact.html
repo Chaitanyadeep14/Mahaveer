@@ -5,92 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Mahaveer Interior & Decorators</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
     <!-- Updated Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Latest version -->
     <style>
-        /* Header Styling */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 20px; /* Increased padding for top and bottom */
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-        }
-    
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-    
-        .logo {
-            flex: 1;
-        }
-    
-        .logo img {
-            height: 80px; /* Increased logo size */
-            cursor: pointer;
-        }
-    
-        .hamburger {
-            font-size: 40px; /* Increased hamburger icon size */
-            color: #333;
-            cursor: pointer;
-            display: flex;
-            justify-content: flex-end;
-            z-index: 1100;
-        }
-    
-        /* Overlay Menu Styles */
-        nav #overlay-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: translateX(100%);
-            transition: transform 0.5s ease-in-out;
-            z-index: 1000;
-        }
-    
-        nav#overlay-menu.active {
-            transform: translateX(0);
-        }
-    
-        nav ul {
-            list-style: none;
-            text-align: center;
-            padding: 0;
-        }
-    
-        nav ul li {
-            margin: 20px 0;
-        }
-    
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-    
-        nav ul li a:hover {
-            color: #F59F0E;
-        }
+       
     
         /* Responsive Hamburger Menu */
         @media (min-width: 769px) {
@@ -276,11 +195,17 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
+        <div class="header-container" style="font-family:Arial, sans-serif;">
+            <div class="logo">
+                <img src="images/logo 22.png" alt="Mahaveer Interior & Decorators Logo">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
+        <!-- The overlay navigation menu -->
         <nav id="overlay-menu">
-            <ul class="nav-links">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -288,11 +213,6 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-
-        <!-- Hamburger Icon -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
     </header>
 
 
@@ -350,9 +270,8 @@
     </a>
 
    <!-- Footer Section -->
-<footer class="footer">
+   <footer class="footer" style="font-family:Arial, sans-serif;">
     <div class="footer-container">
-        <!-- About Section -->
         <div class="footer-section about-section">
             <h4>About</h4>
             <p>
@@ -360,15 +279,26 @@
             </p>
         </div>
 
-        <!-- Contact Section -->
         <div class="footer-section contact-section">
             <h4>Contact</h4>
-            <p><i class="fas fa-phone"></i> +91 9916335613 / +91 6378585249</p>
-            <p><i class="fas fa-phone"></i> +91 8890576350</p>
-            <p><i class="fas fa-map-marker-alt"></i> No: 10/11, K.R. Defence Colony, 1st Phase, Chemasandra, Virgo Nagar (P) Bangalore: 49</p>
+            <p>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919916335613" style="color: white; text-decoration: none;">+91 9916335613</a> / 
+                <a href="tel:+916378585249" style="color: white; text-decoration: none;">+91 6378585249</a>
+            </p>
+            <p>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+918890576350" style="color: white; text-decoration: none;">+91 8890576350</a>
+            </p>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:kunaram1998@gmail.com" style="color: white; text-decoration: none;">kunaram1998@gmail.com</a>
+            </p>
+            <p>
+                <i class="fas fa-map-marker-alt"></i> No: 10/11, K.R. Defence Colony, 1st Phase, Chemasandra, Virgo Nagar (P) Bangalore: 49
+            </p>
         </div>
 
-        <!-- Useful Links Section -->
         <div class="footer-section links-section">
             <h4>Useful Links</h4>
             <ul>
@@ -377,7 +307,6 @@
             </ul>
         </div>
 
-        <!-- Map Section -->
         <div class="footer-section map-section">
             <h4>Find Us</h4>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7948625702265!2d77.7410656246665!3d13.048725687273821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11005b6ecad1%3A0x850094a13c1d0a41!2sMahaveer%20Interior%20%26%20Decorators!5e0!3m2!1sen!2sin!4v1728021326822!5m2!1sen!2sin" 
