@@ -285,6 +285,10 @@ header {
 }
 
 @media (max-width: 768px) {
+    
+    .projects-h1 {
+        font-size: 25px; /* Adjust heading font size */
+    }
     .projects-row {
         flex-direction: column; /* Stack projects vertically */
         align-items: center; /* Center items */
