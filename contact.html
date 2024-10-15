@@ -10,7 +10,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Latest version -->
     <style>
        
-    
+       .hamburger {
+            font-size: 40px; 
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1100;
+        }
+
+        /* Overlay Menu Styles */
+        nav #overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in-out;
+            z-index: 1000;
+        }
+
+        nav#overlay-menu.active {
+            transform: translateX(0);
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 20px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #F59F0E;
+        }
+
         /* Responsive Hamburger Menu */
         @media (min-width: 769px) {
             nav#overlay-menu {
@@ -21,59 +71,65 @@
                 display: flex;
                 justify-content: flex-end;
             }
-    
+
             nav ul {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
             }
-    
+
             nav ul li {
                 margin-right: 20px;
             }
-    
+
             nav ul li:last-child {
                 margin-right: 0;
             }
-    
+
             nav ul li a {
                 font-size: 16px;
                 color: #333;
             }
-    
+
             .hamburger {
                 display: none;
             }
         }
-    
+
         /* Responsive Adjustments for Tablets and Phones */
         @media (max-width: 768px) {
             .header-container {
                 padding: 0 20px;
             }
-    
+
             .logo img {
                 height: 70px;
             }
-    
+
             .hamburger {
                 font-size: 34px;
             }
         }
-    
+
         @media (max-width: 480px) {
             .header-container {
                 padding: 0 10px;
             }
-    
+
             .logo img {
                 height: 60px;
             }
-    
+
             .hamburger {
                 font-size: 30px;
             }
+
+            .about-us-piyush .image img {
+                width: 100%;
+                height: auto; /* Image will be responsive */
+            }
         }
+
     
         /* General Mobile and Tablet (max-width: 768px) */
         @media (max-width: 768px) {
@@ -295,12 +351,12 @@
     <section class="contact-section">
         <div class="contact-info">
             <div class="info-item">
-                <i class="fa fa-phone"></i>
+                <i style="color: #F59F0E;" class="fa fa-phone"></i>
                 <h3>Phone Numbers</h3>
                 <p style="color: black;">+91 9916335613 / +91 6378585249 / +91 8890576350</p>
             </div>
             <div class="info-item">
-                <i class="fa fa-map-marker"></i>
+                <i style="color: #F59F0E; "class="fa fa-map-marker"></i>
                 <h3>Office Addresses</h3>
                 <p style="color: black;">No: 10/11, K.R.Defence Colony, 1st Phase, Chemasandra, Vigronagar  (P) Bangalore:560049</p>
 

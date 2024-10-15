@@ -320,7 +320,7 @@
 
     <!-- Projects Section -->
     <section class="project-section">
-        <h1 class="project-heading fade-in">Our Recent Projects</h1>
+        <h1 class="project-heading fade-in" style= " color:#f59f0e; ">Our Recent Projects</h1>
         <p class="project-description fade-in">Take a look at our finest projects. Each project is tailored to our client’s unique needs and preferences, showcasing our dedication to luxury and precision.</p>
 
         <div class="project-filters">
@@ -542,10 +542,16 @@
             });
         }
   
-        document.getElementById('hamburger').addEventListener('click', function() {
-    const menu = document.getElementById('overlay-menu').querySelector('ul');
-    menu.classList.toggle('show');
-});
+ 
+    </script>
+    <script>
+        // JavaScript for toggling the hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const overlayMenu = document.getElementById('overlay-menu');
+    
+        hamburger.addEventListener('click', () => {
+            overlayMenu.classList.toggle('active');
+        });
     </script>
 
 </body>
