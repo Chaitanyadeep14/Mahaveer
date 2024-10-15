@@ -13,14 +13,14 @@ body {
 
 
 
-.hamburger {
+/* .hamburger {
     font-size: 28px;
     color: #333;
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
     z-index: 1100;
-}
+} */
 /* Overlay Menu Styles */
 nav#overlay-menu {
     position: fixed;
@@ -63,48 +63,7 @@ nav ul li a:hover {
 }
 
 /* Responsive Hamburger Menu */
-.hamburger {
-    display: block;
-    font-size: 28px;
-    color: #333;
-    cursor: pointer;
-    z-index: 1100; /* Ensure it's above the overlay */
-}
 
-/* Responsive Styles */
-@media (min-width: 769px) {
-    nav#overlay-menu {
-        position: relative;
-        height: auto;
-        background: none;
-        transform: translateX(0);
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-
-    nav ul li {
-        margin-right: 20px;
-    }
-
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-        color: #333;
-    }
-
-    .hamburger {
-        display: none;
-    }
-}
 
 /* Hero Banner Section */
 .hero-banner {

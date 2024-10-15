@@ -72,7 +72,7 @@ header {
     position: absolute;
     margin-top: 0;
     top: 20px;
-    right: 20px; /* Adjust this value if you want more or less spacing from the right */
+    right: 20px; 
 }
 
 .hamburger span {
@@ -84,7 +84,7 @@ header {
 }
 
 /* Responsive Menu */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .hamburger {
         display: flex;
         margin: 0;
@@ -121,9 +121,9 @@ header {
     }
 
     nav ul li a:hover {
-        background-color: #f2f2f2;
-    }
-}
+        background-color: #f2f2f2; */
+    /* } */
+/* } */
 /* Projects Section */
 .projects-container {
     padding: 60px 0;

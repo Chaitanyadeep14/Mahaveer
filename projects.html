@@ -22,7 +22,7 @@
             z-index: 1000;
             width: 100%;
         }
-    
+
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -32,16 +32,16 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-    
+
         .logo {
             flex: 1;
         }
-    
+
         .logo img {
             height: 80px; /* Increased logo size */
             cursor: pointer;
         }
-    
+
         .hamburger {
             font-size: 40px; /* Increased hamburger icon size */
             color: #333;
@@ -50,7 +50,7 @@
             justify-content: flex-end;
             z-index: 1100;
         }
-    
+
         /* Overlay Menu Styles */
         nav #overlay-menu {
             position: fixed;
@@ -66,21 +66,21 @@
             transition: transform 0.5s ease-in-out;
             z-index: 1000;
         }
-    
+
         nav#overlay-menu.active {
             transform: translateX(0);
         }
-    
+
         nav ul {
             list-style: none;
             text-align: center;
             padding: 0;
         }
-    
+
         nav ul li {
             margin: 20px 0;
         }
-    
+
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
@@ -88,11 +88,11 @@
             font-weight: bold;
             transition: color 0.3s ease;
         }
-    
+
         nav ul li a:hover {
             color: #F59F0E;
         }
-    
+
         /* Responsive Hamburger Menu */
         @media (min-width: 769px) {
             nav#overlay-menu {
@@ -103,55 +103,55 @@
                 display: flex;
                 justify-content: flex-end;
             }
-    
+
             nav ul {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
             }
-    
+
             nav ul li {
                 margin-right: 20px;
             }
-    
+
             nav ul li:last-child {
                 margin-right: 0;
             }
-    
+
             nav ul li a {
                 font-size: 16px;
                 color: #333;
             }
-    
+
             .hamburger {
                 display: none;
             }
         }
-    
+
         /* Responsive Adjustments for Tablets and Phones */
         @media (max-width: 768px) {
             .header-container {
                 padding: 0 20px;
             }
-    
+
             .logo img {
                 height: 70px;
             }
-    
+
             .hamburger {
                 font-size: 34px;
             }
         }
-    
+
         @media (max-width: 480px) {
             .header-container {
                 padding: 0 10px;
             }
-    
+
             .logo img {
                 height: 60px;
             }
-    
+
             .hamburger {
                 font-size: 30px;
             }
@@ -258,7 +258,7 @@
                 <span></span>
             </div>
         </div>
-    
+
         <nav id="overlay-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -279,7 +279,7 @@
     </section>
 
     <section class="projects">
-        <h1 style="color:#f59f0e;">Our Projects</h1>
+        <h1 style="color:#F59F0E;">Our Projects</h1>
         <div class="project-grid">
             <div class="project-card">
                 <img src="p1.jpg" alt="Project 1">
@@ -437,11 +437,13 @@
         </div>
     </footer>
     
-<script>
-   document.getElementById('hamburger').addEventListener('click', function() {
-    const menu = document.getElementById('overlay-menu').querySelector('ul');
-    menu.classList.toggle('show');
-});
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const overlayMenu = document.getElementById("overlay-menu");
+
+        hamburger.addEventListener("click", function () {
+            overlayMenu.classList.toggle("active");
+        });
     </script>
 
 </body>
