@@ -438,12 +438,11 @@
     </footer>
     
 <script>
-    // Function to toggle the overlay menu
-function toggleMenu() {
-    var overlayMenu = document.getElementById('overlay-menu');
-    overlayMenu.classList.toggle('active');
-}
-</script>
+   document.getElementById('hamburger').addEventListener('click', function() {
+    const menu = document.getElementById('overlay-menu').querySelector('ul');
+    menu.classList.toggle('show');
+});
+    </script>
 
 </body>
 </html>
