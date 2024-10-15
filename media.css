@@ -5,7 +5,7 @@
     box-sizing: border-box;
 } */
 
-body {
+/* body {
     font-family:  sans-serif;
     color: #333;
     background-color: #f9f9f9;
@@ -43,102 +43,87 @@ nav ul li a {
     color: #333;
     font-size: 16px;
     font-weight: bold;
-}
-
-/* Slider Section */
-.slider {
-    width: fit-content;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-    height: auto; /* Set a fixed height */
-}
-
-.slides {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.slide {
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fits properly without zooming */
-    padding: auto;
-}
-
-/* About Us Section */
-.about-us-piyush {
-    padding: 60px 0;
-    background-color: #f2f2f2;
-    text-align: center;
-}
-
-.about h1 {
-    font-size: 36px;
+} */
+/* General Styles */
+body {
+    font-family: sans-serif;
     color: #333;
+    background-color: #f9f9f9;
 }
 
-.about p {
-    max-width: 850px;
-    margin: 0 auto;
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-}
-
-.row {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    margin-top: 40px;
-    text-align: left;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-.image {
-    flex: 1;
-    max-width: 50%;
+.logo img {
+    height: 70px;
 }
 
-.content {
-    flex: 1;
-    max-width: 50%;
-    text-align: left;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 0;
+    top: 20px;
+    right: 20px; /* Adjust this value if you want more or less spacing from the right */
 }
 
-.content h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 4px;
+    transition: 0.3s;
 }
 
-.icons-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        margin: 0;
+    }
 
-.icons {
-    flex: 1;
-    text-align: center;
-}
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #4a4948;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.icons i {
-    font-size: 24px;
-    color: #F59F0E;
-    margin-bottom: 10px;
-}
+    nav ul.show {
+        display: flex;
+    }
 
-.icons span {
-    display: block;
-    font-size: 16px;
-}
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+        
+    }
 
+    nav ul li a {
+        color: #070707;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #f2f2f2;
+    }
+}
 /* Projects Section */
 .projects-container {
     padding: 60px 0;
@@ -165,6 +150,7 @@ nav ul li a {
 }
 
 .project-item {
+    
     flex: 1;
     max-width: 500px;
     text-align: left;
@@ -215,54 +201,129 @@ nav ul li a {
     background-color: #333;
 }
 
-/* Media Queries for Mobile Screens */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+
+
+.about h1 {
+    font-size: 36px; /* Heading font size */
+    color: #333; /* Heading text color */
+    margin-bottom: 30px; /* Space below heading */
+}
+
+.row {
+    display: flex; /* Default to flex for larger screens */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    gap: 30px; /* Gap between items */
+    max-width: 1200px; /* Maximum width of the row */
+    margin: 0 auto; /* Center row within the container */
+}
+
+.image {
+    flex: 1; /* Allow image to take available space */
+    max-width: 60%; /* Increase max width of image */
+    min-width: 300px; /* Set minimum width for image */
+}
+
+.content {
+    flex: 1; /* Allow content to take available space */
+    max-width: 60%; /* Increase max width of content */
+    min-width: 300px; /* Set minimum width for content */
+    text-align: left; /* Align text to left */
+}
+
+.content h3 {
+    font-size: 28px; /* Subheading font size */
+    margin-bottom: 20px; /* Space below subheading */
+}
+
+.content p {
+    max-width: 850px; /* Max width for paragraphs */
+    margin: 0 auto; /* Center text horizontally */
+    font-size: 16px; /* Font size */
+    line-height: 1.5; /* Line height */
+    color: #666; /* Text color */
+}
+
+.read-more-btn,
+.less-text {
+    display: inline-block; /* Display as block for better click area */
+    margin-top: 20px; /* Space above button */
+    text-decoration: none; /* Remove underline */
+    color: #F59F0E; /* Button color */
+    font-weight: bold; /* Button font weight */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .projects-heading {
+        font-size: 32px; /* Adjust heading font size */
     }
 
-    nav ul {
-        flex-direction: column;
-        margin-top: 10px;
+    .projects-subheading {
+        font-size: 24px; /* Adjust subheading font size */
     }
 
-    nav ul li {
-        margin-bottom: 10px;
+    .project-item {
+        max-width: 100%; /* Allow project items to take more space */
     }
 
-    .about-us-piyush,
-    .projects-container {
-        padding: 30px 15px;
+    .project-item h3 {
+        font-size: 22px; /* Decrease heading size */
+    }
+
+    .project-item p {
+        font-size: 15px; /* Decrease paragraph font size */
+    }
+
+    .about h1 {
+        font-size: 32px; /* Decrease about section heading */
+    }
+
+    .content h3 {
+        font-size: 24px; /* Decrease subheading in content */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-row {
+        flex-direction: column; /* Stack projects vertically */
+        align-items: center; /* Center items */
+    }
+
+    .project-item {
+        max-width: 95%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Add space between items */
+    }
+
+    .about-us-piyush {
+        padding: 40px 10px; /* Adjust padding for smaller screens */
     }
 
     .row {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center items */
     }
 
     .image,
     .content {
-        max-width: 100%;
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-item h3 {
+        font-size: 20px; /* Further decrease heading size */
+    }
+
+    .project-item p {
+        font-size: 14px; /* Smaller paragraph font size */
+    }
+
+    .about h1 {
+        font-size: 28px; /* Further decrease about section heading */
     }
 
     .content h3 {
-        font-size: 24px;
-    }
-
-    .projects-heading {
-        font-size: 28px;
-    }
-
-    .project-item {
-        max-width: 90%;
-    }
-
-    .project-image img {
-        height: 150px;
-    }
-
-    .btn {
-        padding: 8px 16px;
+        font-size: 22px; /* Decrease subheading in content */
     }
 }

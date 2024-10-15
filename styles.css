@@ -11,36 +11,7 @@ body {
     background-color: #f9f9f9;
 }
 
-/* header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px; 
-    width: 100%;
-    max-width: 100%;
-}
-
-.logo {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.logo img {
-    height: 50px;
-    cursor: pointer;
-} */
 
 .hamburger {
     font-size: 28px;
@@ -222,7 +193,7 @@ nav ul li a:hover {
 
 /* About Us Section */
 .about {
-    padding: 60px;
+    padding: 40px;
     text-align: center;
     background-color: #f2f2f2;
     transition: background-color 0.3s ease;
@@ -236,6 +207,28 @@ nav ul li a:hover {
 }
 
 .about p {
+    font-size: 20px;
+    max-width: 850px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    color: #555;
+}
+
+.project {
+    padding: 10px;
+    text-align: center;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
+
+.project h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: 'Georgia', serif;
+}
+
+.project p {
     font-size: 20px;
     max-width: 850px;
     margin: 0 auto;
