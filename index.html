@@ -10,11 +10,11 @@
     
     <style>
         /* Header Styling */
-        .header {
+        /* .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 20px; /* Increased padding for top and bottom */
+            padding: 10px 20px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -38,12 +38,12 @@
         }
 
         .logo img {
-            height: 80px; /* Increased logo size */
+            height: 50x;
             cursor: pointer;
-        }
+        } */
 
         .hamburger {
-            font-size: 40px; /* Increased hamburger icon size */
+            font-size: 40px; 
             color: #333;
             cursor: pointer;
             display: flex;
@@ -277,8 +277,7 @@
                 max-height: 250px;
             }
         }
-    </style>
-    <style>
+ 
         /* General Styles */
 .projects-container {
     margin: 0;
@@ -363,7 +362,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="mahaveer_logo.png" alt="Mahaveer Interior & Decorators Logo">
+                <img src="images/logo 2.svg" alt="Mahaveer Interior & Decorators Logo">
             </div>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -416,19 +415,20 @@
             <h1 class="heading">Why Choose Us?</h1>
             <div class="row">
                 <div class="image">
-                    <img src="projects/14.jpg" alt="About Image">
+                    <img src="projects/14.jpg"  style="border-radius: 5px;" alt="About Image">
                 </div>
                 <div class="content">
                     <h3>The Story of Mahaveer Interior & Decorators</h3>
-                    <p id="about-text">
+                    <p id="about-text" style="font-size: 16px; line-height: 1.5;">
                         At Mahaveer Interior & Decorators, we believe that every space has a story to tell. With over 15 years of experience, we have transformed homes and offices into beautiful, functional environments that reflect the unique personalities of our clients. 
                         Our commitment to quality, attention to detail, and passion for design make us the trusted choice for those seeking a perfect blend of creativity and functionality.
-                        <span class="more-text">
+                        <span class="more-text" style="font-size: 16px;">
                             We pride ourselves on listening to our clients, understanding their needs, and delivering results that not only meet but exceed expectations. Whether it’s a cozy home renovation or a large-scale commercial project, our goal is to create spaces that inspire, uplift, and stand the test of time.
                             We also prioritize sustainability in all our designs, ensuring that we not only beautify spaces but also contribute to a healthier, greener environment. By using eco-friendly materials and energy-efficient solutions, we create interiors that are as sustainable as they are stylish.
                             We work closely with our clients from concept to completion, ensuring that every detail aligns with their vision. Our team is dedicated to bringing creativity and innovation to each project while maintaining a strong focus on functionality and comfort.
                         </span>
                     </p>
+                    
                     <a class="read-more-btn" onclick="toggleReadMore()">Read More</a>
                     <a class="less-text" onclick="toggleReadMore()">Read Less</a>
                 </div>
@@ -437,16 +437,18 @@
     </div>
 
     <!-- Projects Section -->
-    <div style="margin: 0; padding: 10px; background-color: lightgray;" class="projects-container">
-        <section class="projects-section" id="projects">
-            <h1 class="projects-heading">Our Projects</h1>
+    <div style="margin: 0; padding: 10px; background-color: lightgray;" class="about-us-piyush">
+        <!-- <section class="projects-section" id="projects"> -->
+            
+            <section class="about" id="about">
+            <h1 class="heading">Our Projects</h1>
             <div class="projects-row">
                 <div class="project-item">
                     <div class="project-image">
                         <img src="projects/1.jpg" alt="Project 1">
                     </div>
                     <h3>Elegant Residences</h3>
-                    <p style="text-align: justify;">Discover our portfolio of stunning home transformations, where each design reflects the unique tastes and lifestyles of our clients, blending comfort with elegance.</p>
+                    <p style="text-align: justify; font-size: 16px; line-height: 1.5;">Discover our portfolio of stunning home transformations, where each design reflects the unique tastes and lifestyles of our clients, blending comfort with elegance.</p>
                 </div>
 
                 <div class="project-item">
@@ -454,7 +456,7 @@
                         <img src="projects/6.jpg" alt="Project 2">
                     </div>
                     <h3>Unique Renovations</h3>
-                    <p>Check out our renovation projects, showcasing our ability to breathe new life into existing spaces while preserving their character and charm.</p>
+                    <p style="text-align: justify; font-size: 16px; line-height: 1.5;">Check out our renovation projects, showcasing our ability to breathe new life into existing spaces while preserving their character and charm.</>
                 </div>
 
                 <div class="project-item">
@@ -462,7 +464,7 @@
                         <img src="projects/16.jpg" alt="Project 3">
                     </div>
                     <h3>Light Design</h3>
-                    <p>Explore our collection of tranquil bedroom designs that prioritize comfort and relaxation. Each space is thoughtfully crafted with soothing colors and luxurious materials, creating the perfect sanctuary for rest.</p>
+                    <p style="text-align: justify; font-size: 16px; line-height: 1.5;">Explore our collection of tranquil bedroom designs that prioritize comfort and relaxation. Each space is thoughtfully crafted with soothing colors and luxurious materials, creating the perfect sanctuary for rest.</p>
                 </div>
 
                 <div class="project-item">
@@ -470,15 +472,15 @@
                         <img src="projects/17.jpg" alt="Project 4">
                     </div>
                     <h3>Space Planning</h3>
-                    <p>Discover our stylish bedroom projects that blend modern aesthetics with cozy elements. From smart storage solutions to elegant decor, we create inviting spaces that reflect your personal style while maximizing functionality.</p>
+                    <p style="text-align: justify; font-size: 16px; line-height: 1.5;">Discover our stylish bedroom projects that blend modern aesthetics with cozy elements. From smart storage solutions to elegant decor, we create inviting spaces that reflect your personal style while maximizing functionality.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <div class="about-us-piyush">
+    <div style="margin: 0; padding: 10px; background-color: lightgray;" class="about-us-piyush">
         <section class="about" id="about">
-            <h3 class="sub-heading">Why Us</h3>
+            <!-- <h3 class="sub-heading">Why Us</h3> -->
             <h1 class="heading">Our Unique Approach</h1>
             <div class="row">
                 <div class="image">

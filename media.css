@@ -1,12 +1,12 @@
 /* General Styles */
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #333;
     background-color: #f9f9f9;
 }
@@ -15,13 +15,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .logo img {
-    height: 50px;
+    height: 100px;
 }
 
 .nav-wrapper {

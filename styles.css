@@ -11,7 +11,7 @@ body {
     background-color: #f9f9f9;
 }
 
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px; /* Increased padding for spacing on the left and right */
+    padding: 0 40px; 
     width: 100%;
     max-width: 100%;
 }
@@ -40,7 +40,7 @@ header {
 .logo img {
     height: 50px;
     cursor: pointer;
-}
+} */
 
 .hamburger {
     font-size: 28px;
